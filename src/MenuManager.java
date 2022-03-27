@@ -4,9 +4,9 @@ public class MenuManager {
 	public static void main(String[] args) {
 		int num = 0;
 		Scanner input = new Scanner(System.in);
-		
-	    while(num !=6) {
-		
+
+		while(num !=6) {
+
 			System.out.println("1. add kind of Car");
 			System.out.println("2. delete kind of Car");
 			System.out.println("3. edit kind of Car");
@@ -15,35 +15,55 @@ public class MenuManager {
 			System.out.println("6. Exit");
 			System.out.println("Select one number between 1-6");
 			num = input.nextInt();
-		
-		switch(num) {
-			case 1:
-				System.out.print("Car Brand:");
-				String CarBrand = input.next();
-				System.out.print("Car name:");
-				String Carname = input.next();
-				System.out.print("Car Engine:");
-				String CarEngine = input.next();
-				System.out.print("Car tire:");
-				String Cartire = input.next();
-		    	break;
-		    case 2:
-		    	System.out.print("Car Brand:");
-				String CarBrand1 = input.next();
-		    	break;
-		    case 3:
-		    	System.out.print("Car Brand:");
-				String CarBrand2 = input.next();
-		    	break;
-		    case 4:
-		    	System.out.print("Car Brand:");
-				String CarBrand3 = input.next();
-		    	break;
-			
-		
-		
-			
+			if (num==1) {
+				addkindofCar();
 			}
-	    }
+			else if (num==2) {
+				deletekindofCar();
+			}
+			else if (num==3) {
+				editkindofCar();
+			}
+			else if (num==4) {
+				viewkindofCar();
+			}
+			else {
+				continue;
+			}
+
+		}
+
 	}
+	public static void addkindofCar() {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Car Brand:");
+		String carBrand = input.next();
+		System.out.print("Car Name:");
+		String carName = input.next();
+		System.out.print("Car Engine:");
+		String carEngine = input.next();
+		System.out.println(carEngine);
+		System.out.print("Car tire:");
+		String cartire = input.next();
+
+	}
+	public static void deletekindofCar() {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Car Brand:");
+		String carBrand = input.next();
+		
+	}
+	public static void editkindofCar() {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Car Brand:");
+		String carBrand = input.next();
+		
+	}
+	public static void viewkindofCar() {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Car Brand:");
+		String carBrand = input.next();
+		
+	}
+	
 }
