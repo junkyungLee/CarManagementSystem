@@ -26,7 +26,7 @@ public class MenuManager {
 				carManager.editCar();
 			}
 			else if (num==4) {
-				carManager.viewCar();
+				carManager.viewCars();
 			}
 			else {
 				continue;
@@ -35,6 +35,4 @@ public class MenuManager {
 		}
 
 	}
-
-
 }
