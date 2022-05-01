@@ -11,11 +11,11 @@ public class Car {
 
 
 	public Car() {
-		
-
 	}
-	public Car(int 
-			brand, String name) {
+	public Car(Carkind kind) {
+		this.kind = kind;
+	}
+	public Car(int brand, String name) {
 		this.brand = brand;
 		this.name = name;
 		
@@ -28,6 +28,16 @@ public class Car {
 		this.tire = tire;
 		
 	}
+	
+	public Car(Carkind kind, int brand, String name, String engine, String tire) {
+		this.kind = kind;
+		this.brand = brand;
+		this.name = name;
+		this.engine = engine;
+		this.tire = tire;
+		
+	}
+	
 	public Carkind getKind() {
 		return kind;
 	}
@@ -59,9 +69,26 @@ public class Car {
 		this.tire = tire;
 	}
 
-
+   
 	public void printInfo() {
-		System.out.println("brand:"+ this.brand + " name:"+ this.name + " engine:" + this.engine + " tire:" + this.tire);
+		String skind = "none";
+		switch(this.kind) {
+		case SportsCar:
+			skind = "Sports";
+			break;
+		case Bus:
+			skind = "Bus";
+			break;
+		case Taxi:
+			skind = "Taxi";
+			break;
+		case Bike:
+			skind = "Bike";
+			break;
+		default:
+			
+		}
+		System.out.println("kind:" + skind + "brand:"+ this.brand +  "name:"+ this.name + " engine:" + this.engine + " tire:" + this.tire);
 
 	}
 	public void getUserInput(Scanner input) {

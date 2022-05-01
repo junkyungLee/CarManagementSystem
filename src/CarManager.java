@@ -1,7 +1,9 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import Car.Bike;
 import Car.Car;
+import Car.Carkind;
 import Car.SportsCar;
 
 public class CarManager {
@@ -15,19 +17,27 @@ public class CarManager {
 		int kind = 0;
 		Car car;
 		while (kind != 1 && kind != 2) {
-			System.out.print("1 for SportsCar");
-			System.out.print("2 for Bus");
-			System.out.print("Slect num for Car kind:");
+			System.out.println("1 for Bus");
+			System.out.println("2 for SportsCar");
+			System.out.println("3 Bike");
+			System.out.print("Slect num 1, 2 or 3 for Car kind:");
 			kind = input.nextInt();
 			if (kind == 1) {
-				car = new Car();
+				car = new Car(Carkind.Bus);
 				car.getUserInput(input);
 				cars.add(car);
 				break;
 
 			}
 			else if (kind == 2) {
-				car = new SportsCar();
+				car = new SportsCar(Carkind.SportsCar);
+				car.getUserInput(input);
+				cars.add(car);
+				break;
+
+			}
+			else if (kind == 3) {
+				car = new Bike(Carkind.Bike);
 				car.getUserInput(input);
 				cars.add(car);
 				break;

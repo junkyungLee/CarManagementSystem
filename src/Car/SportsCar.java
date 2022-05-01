@@ -3,6 +3,10 @@ package Car;
 import java.util.Scanner;
 
 public class SportsCar extends Car {
+	
+	public SportsCar(Carkind kind) {
+		super(kind);
+	}
 
 	public void getUserInput(Scanner input) {
 		System.out.print("Car Brand");
