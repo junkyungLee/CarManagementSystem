@@ -2,12 +2,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import Car.Bike;
+import Car.Bus;
 import Car.Car;
+import Car.CarInput;
 import Car.Carkind;
 import Car.SportsCar;
 
 public class CarManager {
-	ArrayList<Car> cars = new ArrayList<Car>();
+	ArrayList<CarInput> cars = new ArrayList<CarInput>();
 	Scanner input;
 	CarManager(Scanner input) {
 		this.input = input;
@@ -15,7 +17,7 @@ public class CarManager {
 
 	public void addCar() {
 		int kind = 0;
-		Car car;
+		CarInput carInput;
 		while (kind != 1 && kind != 2) {
 			System.out.println("1 for Bus");
 			System.out.println("2 for SportsCar");
@@ -23,23 +25,23 @@ public class CarManager {
 			System.out.print("Slect num 1, 2 or 3 for Car kind:");
 			kind = input.nextInt();
 			if (kind == 1) {
-				car = new Car(Carkind.Bus);
-				car.getUserInput(input);
-				cars.add(car);
+				carInput = new Bus(Carkind.Bus);
+				carInput.getUserInput(input);
+				cars.add(carInput);
 				break;
 
 			}
 			else if (kind == 2) {
-				car = new SportsCar(Carkind.SportsCar);
-				car.getUserInput(input);
-				cars.add(car);
+				carInput = new SportsCar(Carkind.SportsCar);
+				carInput.getUserInput(input);
+				cars.add(carInput);
 				break;
 
 			}
 			else if (kind == 3) {
-				car = new Bike(Carkind.Bike);
-				car.getUserInput(input);
-				cars.add(car);
+				carInput = new Bike(Carkind.Bike);
+				carInput.getUserInput(input);
+				cars.add(carInput);
 				break;
 
 			}
@@ -74,8 +76,8 @@ public class CarManager {
 		System.out.print("Car Brand:");
 		int carbrand = input.nextInt();
 		for (int i = 0; i<cars.size(); i++) {
-			Car car = cars.get(i);
-			if (car.getBrand() == carbrand) {
+			CarInput carInput = cars.get(i);
+			if (carInput.getBrand() == carbrand) {
 				int num = -1;
 				while(num !=5) {
 					System.out.println("*** Car Management System Menu ***");
@@ -89,12 +91,12 @@ public class CarManager {
 					if (num==1) {
 						System.out.print("Car Brand");
 						int brand = input.nextInt();
-						car.setBrand(brand);
+						carInput.setBrand(brand);
 					}
 					else if (num==2) {
 						System.out.print("Car Name");
 						String name = input.next();
-						car.setName(name);
+						carInput.setName(name);
 
 
 
@@ -102,12 +104,12 @@ public class CarManager {
 					else if (num==3) {
 						System.out.print("Car Engine");
 						String engine = input.next();
-						car.setEngine(engine);
+						carInput.setEngine(engine);
 					}
 					else if (num==4) {
 						System.out.print("Car Tire");
 						String tire = input.next();
-						car.setTire(tire);
+						carInput.setTire(tire);
 					}
 					else {
 						continue;

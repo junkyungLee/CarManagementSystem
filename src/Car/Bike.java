@@ -2,7 +2,7 @@ package Car;
 
 import java.util.Scanner;
 
-public class Bike extends Car {
+public class Bike extends Car implements CarInput {
 	
 	protected String Specialengine;
 	protected String Specialtire;
