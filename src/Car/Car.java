@@ -1,13 +1,15 @@
 package Car;
 import java.util.Scanner;
-public abstract class Car {
+
+import exception.EmailFormatException;
+public abstract class Car implements CarInput {
 	protected Carkind kind = Carkind.SportsCar;
 	protected int brand;
 	protected String name;
 	protected String engine;
 	protected String tire;
-	
-	
+
+
 
 
 	public Car() {
@@ -18,7 +20,7 @@ public abstract class Car {
 	public Car(int brand, String name) {
 		this.brand = brand;
 		this.name = name;
-		
+
 	}
 
 	public Car(int brand, String name, String engine, String tire) {
@@ -26,18 +28,18 @@ public abstract class Car {
 		this.name = name;
 		this.engine = engine;
 		this.tire = tire;
-		
+
 	}
-	
+
 	public Car(Carkind kind, int brand, String name, String engine, String tire) {
 		this.kind = kind;
 		this.brand = brand;
 		this.name = name;
 		this.engine = engine;
 		this.tire = tire;
-		
+
 	}
-	
+
 	public Carkind getKind() {
 		return kind;
 	}
@@ -53,13 +55,17 @@ public abstract class Car {
 	public String getName() {
 		return name;
 	}
-	public void setName(String name) {
+	public void setName(String name)  {
 		this.name = name;
 	}
 	public String getEngine() {
 		return engine;
 	}
-	public void setEngine(String engine) {
+	public void setEngine(String engine) throws EmailFormatException{
+		if (!engine.contains("@") && !engine.equals("")) {
+			throw new EmailFormatException();
+		}
+
 		this.engine = engine;
 	}
 	public String getTire() {
@@ -69,8 +75,58 @@ public abstract class Car {
 		this.tire = tire;
 	}
 
-   
+
 	public abstract void printInfo();
-	
-	
+
+	public void setCarBrand(Scanner input) {
+		System.out.print("Car Brand:");
+		int brand = input.nextInt();
+		this.setBrand(brand);
+	}
+
+	public void setCarName(Scanner input) {
+		System.out.print("Car Name");
+		String name = input.next();
+		this.setName(name);
+	}
+
+	public void setCarEngine(Scanner input) {
+		String engine = "";
+		while (!engine.contains("@")) {
+			System.out.print("Car Engine");
+			engine = input.next();
+			try {
+				this.setEngine(engine);
+			} catch (EmailFormatException e) {
+				System.out.println("Incorrect Email Format. put the e-mail address that contains @");
+			}
+		}
+	}
+	public void setCarTire(Scanner input) {
+		System.out.print("Car Tire");
+		String tire = input.next();
+		this.setTire(tire);
+	}
+
+	public String getKindString() {
+		String skind = "none";
+		switch(this.kind) {
+		case Bus:
+			skind = "bus.";
+			break;
+		case SportsCar:
+			skind = "SportsCar.";
+			break;
+		case Bike:
+			skind = "Bike.";
+			break;
+		case Taxi:
+			skind = "Taxi.";
+			break;
+		default:
+
+		}
+		return skind;
+
+	}
 }
