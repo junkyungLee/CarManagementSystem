@@ -1,8 +1,14 @@
 package Car;
+import java.io.Serializable;
 import java.util.Scanner;
 
 import exception.EmailFormatException;
-public abstract class Car implements CarInput {
+public abstract class Car implements CarInput, Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4841862900652837547L;
+
 	protected Carkind kind = Carkind.SportsCar;
 	protected int brand;
 	protected String name;
