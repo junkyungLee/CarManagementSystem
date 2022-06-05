@@ -1,3 +1,4 @@
+package manager;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -5,6 +6,7 @@ import java.util.Scanner;
 
 import Car.Bike;
 import Car.Bus;
+import Car.Car;
 import Car.CarInput;
 import Car.Carkind;
 import Car.SportsCar;
@@ -137,6 +139,14 @@ public class CarManager implements Serializable{
 		for (int i =0; i<cars.size(); i++) {
 			cars.get(i).printInfo();
 		}
+	}
+	
+	public int size() {
+		return cars.size();
+	}
+	
+	public CarInput get(int index) {
+		return (Car) cars.get(index);
 	}
 
 

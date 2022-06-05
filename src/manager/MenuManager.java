@@ -1,3 +1,4 @@
+package manager;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -7,6 +8,7 @@ import java.io.ObjectOutputStream;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import gui.WindowFrame;
 import log.EventLogger;
 public class MenuManager {
 	static EventLogger logger = new EventLogger("log.txt");
@@ -18,6 +20,8 @@ public class MenuManager {
 		if(carManager == null) {
 			carManager = new CarManager(input);
 		}
+		
+		WindowFrame frame = new WindowFrame(carManager);
 		selectMenu(input, carManager);
 		putObject(carManager, "carmanager.ser");
 

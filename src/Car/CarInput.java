@@ -10,10 +10,16 @@ public interface CarInput {
 	public int getBrand();
 
 	public void setBrand(int brand);
+	
+	public String getName();
 
 	public void setName(String name);
+	
+	public String getEngine();
 
 	public void setEngine(String engine) throws EmailFormatException;
+	
+	public String getTire();
 
 	public void setTire(String tire);
 
