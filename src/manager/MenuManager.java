@@ -20,7 +20,7 @@ public class MenuManager {
 		if(carManager == null) {
 			carManager = new CarManager(input);
 		}
-		
+
 		WindowFrame frame = new WindowFrame(carManager);
 		selectMenu(input, carManager);
 		putObject(carManager, "carmanager.ser");
@@ -76,8 +76,8 @@ public class MenuManager {
 	}
 	public static CarManager getObject(String filename) {
 		CarManager carManager = null;
-		
-		
+
+
 		try {
 			FileInputStream file = new FileInputStream(filename);
 			ObjectInputStream in = new ObjectInputStream(file);
@@ -111,7 +111,7 @@ public class MenuManager {
 			out.close();
 			file.close();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

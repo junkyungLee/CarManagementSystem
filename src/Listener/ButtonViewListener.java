@@ -13,7 +13,7 @@ public class ButtonViewListener implements ActionListener {
 
 	public ButtonViewListener(WindowFrame frame) {
 		this.frame = frame;
-		// TODO Auto-generated constructor stub
+
 	}
 
 	@Override
