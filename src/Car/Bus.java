@@ -18,7 +18,7 @@ public class Bus extends Car {
 
 	public void printInfo() {
 		String skind = getKindString();
-		System.out.println("kind:" + skind + "brand:"+brand +  "name:"+name + " engine:" + engine + " tire:" + tire);
+		System.out.println("kind:" + skind + "brand:"+ brand +  "name:"+ name + " engine:" + engine + " tire:" + tire);
 
 	}
 

@@ -19,8 +19,22 @@ public class CarManager implements Serializable{
 
 	ArrayList<CarInput> cars = new ArrayList<CarInput>();
 	transient Scanner input;
+	
 	CarManager(Scanner input) {
 		this.input = input;
+	}
+	public void setScanner(Scanner input) {
+		this.input = input;
+	}
+	
+	public void addCar(String brand, String name, String engine, String tire) {
+		CarInput carInput = new Bus(Carkind.Bus);
+		carInput.getUserInput(input);
+		cars.add(carInput);
+	}
+	
+	public void addCar(CarInput carInput) {
+		cars.add(carInput);
 	}
 
 	public void addCar() {

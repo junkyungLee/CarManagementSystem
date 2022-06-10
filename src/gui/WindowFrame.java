@@ -6,11 +6,13 @@ import javax.swing.JPanel;
 import manager.CarManager;
 
 public class WindowFrame extends JFrame{
-
+	
+	CarManager carManager;
+	
 	MenuSelection menuselection;
 	CarAdder caradder;
 	CarViewer carviewer;
-	CarManager carManager;
+	
 	
 
 	public WindowFrame(CarManager carManager) {
@@ -20,7 +22,7 @@ public class WindowFrame extends JFrame{
 		
 		this.carManager = carManager;
 		menuselection = new MenuSelection(this);
-		caradder = new CarAdder(this);
+		caradder = new CarAdder(this,this.carManager);
 		carviewer = new CarViewer(this, this.carManager);
 
 

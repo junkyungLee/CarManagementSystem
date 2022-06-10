@@ -12,24 +12,26 @@ import Car.CarInput;
 import manager.CarManager;
 
 public class CarViewer extends JPanel{
-	
+
 	WindowFrame frame;
-	
+
 	CarManager carManager;
 
-	public CarViewer(WindowFrame frame, CarManager carManager) {
-		this.frame = frame;
+	public CarManager getCarManager() {
+		return carManager;
+	}
+
+	public void setCarManager(CarManager carManager) {
 		this.carManager = carManager;
-		
-		System.out.println("***"+carManager.size()+"***");
-		
+		this.removeAll();
+
 		DefaultTableModel model = new DefaultTableModel();
 		model.addColumn("Brand");
 		model.addColumn("Name");
 		model.addColumn("Engine");
 		model.addColumn("Contact Info.");
-		
-		
+
+
 		for(int i=0; i<carManager.size(); i++) {
 			Vector row = new Vector();
 			CarInput si = carManager.get(i);
@@ -44,7 +46,13 @@ public class CarViewer extends JPanel{
 		JScrollPane sp = new JScrollPane(table);
 
 		this.add(sp);
-		
+
+	}
+	public CarViewer(WindowFrame frame, CarManager carManager) {
+		this.frame = frame;
+		this.carManager = carManager;
+
+		System.out.println("***"+carManager.size()+"***");
 	}
 
 }

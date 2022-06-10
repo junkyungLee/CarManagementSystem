@@ -77,7 +77,6 @@ public class MenuManager {
 	public static CarManager getObject(String filename) {
 		CarManager carManager = null;
 
-
 		try {
 			FileInputStream file = new FileInputStream(filename);
 			ObjectInputStream in = new ObjectInputStream(file);
@@ -94,10 +93,7 @@ public class MenuManager {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 		return carManager;
-
-
 	}
 
 	public static void putObject(CarManager carManager, String filename) {
